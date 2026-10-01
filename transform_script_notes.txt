@@ -1,0 +1,16 @@
+ServiceNow Import Set & Transform Map Configuration Notes:
+
+1. Import Set Table: u_employee_import
+2. Target Table: u_employee_test
+
+Field Mappings:
+- u_employee_id  ---> u_employee_id  (Coalesce = True)
+- u_name         ---> u_employee_name
+- u_email_id     ---> u_email
+- u_department   ---> u_department
+- u_location     ---> u_location
+
+Behavior Verification:
+- First Import: Inserts all records into target table.
+- Second Import (Modified Email/Name): Updates existing records based on Employee ID match due to Coalesce=True.
+-
